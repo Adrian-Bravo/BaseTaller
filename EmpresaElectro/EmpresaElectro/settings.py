@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'apps.aparatos.apps.AparatosConfig',
     'apps.componentes.apps.ComponentesConfig',
     'apps.fabricantes.apps.FabricantesConfig',
+    'apps.tipo_elec.apps.TipoElecConfig',
+
 ]
 
 MIDDLEWARE = [
