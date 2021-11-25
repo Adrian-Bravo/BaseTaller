@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'EmpresaElectro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_almacen',
         'USER': 'root',
         'PASSWORD': 'Almacen08#',
