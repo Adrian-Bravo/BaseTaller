@@ -23,4 +23,5 @@ urlpatterns = [
     path('componentes/', include('apps.componentes.urls')),
     path('fabricantes/', include('apps.fabricantes.urls')),
     path('aparatos/', include('apps.aparatos.urls')),
+    path('tipo_ele/', include('apps.tipo_elec.urls')),
 ]
