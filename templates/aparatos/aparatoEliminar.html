@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <form method="post">
+
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <h4>¿Desea eliminar el registro de {{ aparato.descripcion }} ?</h4>
+        <button class="btn btn-danger" type=submit>
+            Sí, eliminar
+        </button>
+        <a class="btn btn-primary" href="{% url 'aparatos:index' %}">Cancelar</a>
+
+
+    </form>
+
+{% endblock %}

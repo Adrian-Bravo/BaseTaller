@@ -22,4 +22,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('componentes/', include('apps.componentes.urls')),
     path('fabricantes/', include('apps.fabricantes.urls')),
+    path('aparatos/', include('apps.aparatos.urls')),
 ]
