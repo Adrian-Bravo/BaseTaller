@@ -32,3 +32,12 @@ def componentesEdit(request, id_componente):
         return redirect('componentes:index')
 
     return render(request, 'componentes/formComponente.html', {'form': form})
+
+
+def componentesEliminar(request, id_componente):
+    componente = Componentes.objects.get(pk=id_componente)
+    if(request.method == 'POST'):
+        componente.delete()
+        return redirect('componentes:index')
+
+    return render(request, 'componentes/componenteEliminar.html', {'componente': componente})
