@@ -2,6 +2,9 @@
 
 {% block content %}
     <h3>Listado de fabricantes</h3>
+    <a href="{% url 'fabricantes:fabricanteCreate' %}" 
+      class="btn btn-primary pull-right">Agregar</a>
+    </h1>
     <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -12,15 +15,25 @@
           </tr>
         </thead>
         <tbody>
+          {% if fabricantes %}
+          {% for fabricante in fabricantes %}
           <tr>
-            {% for fabricante in fabricantes %}
+            
               <td>{{fabricante.id}}</td>
               <td>{{fabricante.nombre}}</td>
               <td>{{fabricante.domicilio}}</td>
               <td>{{fabricante.componentes}}</td>
-            {% endfor %}
+              <td>
+                <a class="btn btn-warning " href="{% url 'fabricantes:fabricanteEdit' fabricante.id %}" >
+                  ACTUALIZAR</a>
+                <a class="btn btn-danger" href="{% url 'fabricantes:fabricanteEliminar' fabricante.id %}">
+                  ELIMINAR</a>
+              </td>
           </tr>
-          
+          {% endfor %}
+          {% else %}
+          <h3>NO EXISTEN REGISTROS DE FABRICANTES</h3>
+        {% endif %}
         </tbody>
       </table>
 {% endblock %}
