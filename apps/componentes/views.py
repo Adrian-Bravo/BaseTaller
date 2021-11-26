@@ -1,6 +1,6 @@
-from django.shortcuts import render
-
+from django.shortcuts import redirect, render
 from apps.componentes.models import Componentes
+from apps.componentes.form import ComponenteForm
 
 # Create your views here.
 

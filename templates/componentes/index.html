@@ -2,6 +2,9 @@
 
 {% block content %}
     <h3>Listado de componentes</h3>
+    <h1 class="pull-right">
+        <a href="{% url 'componentes:componentesCreate' %}" class="btn btn-primary pull-right">Adicionar</a>
+    </h1>
     <table class="table table-dark table-striped">
         <thead>
           <tr>

@@ -1,5 +1,5 @@
 from django.urls import path, include
-from apps.componentes.views import index
+from apps.componentes.views import index, componentesCreate
 
 app_name = "componentes"
 
