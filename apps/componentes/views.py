@@ -4,6 +4,9 @@ from apps.componentes.form import ComponenteForm
 
 # Create your views here.
 
+def home(request):
+    return render(request, 'base/base.html')
+
 def index(request):
     componente = Componentes.objects.all()
     context = {'componentes': componente}
