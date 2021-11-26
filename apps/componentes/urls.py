@@ -5,4 +5,5 @@ app_name = "componentes"
 
 urlpatterns = [
     path('', index, name='index'),
+    path('crear/', componentesCreate, name='componentesCreate'),
 ]
