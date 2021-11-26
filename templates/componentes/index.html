@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h3 style="text-align: center; margin-top: 20px;">Listado de componentes</h3>
+    <h1 class="pull-right" style="text-align: center;">
+        <a href="{% url 'componentes:componentesCreate' %}" class="btn btn-primary pull-right">Adicionar</a>
+    </h1>
+
+    <table class="table table-bordered table-sm" style="width: 90%; margin: 0 auto;">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Especificaciones</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Aparatos</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for componente in componentes %}
+          <tr>
+              <td>{{componente.id}}</td>
+              <td>{{componente.nombre}}</td>
+              <td>{{componente.especificaciones}}</td>
+              <td>{{componente.cantidad}}</td>
+              <td>{{componente.precio}}</td>
+              <td>{{componente.aparatos.descripcion}}</td>
+              <td>
+                <a class="btn btn-warning btn-xs" href="{% url 'componentes:componentesEdit' componente.id %}">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" href="{% url 'componentes:componentesEliminar' componente.id %}">
+                    <i class="fas fa-trash"></i>
+                </a>
+              </td>
+        {% endfor %}
+          </tr>
+          
+        </tbody>
+      </table>
+{% endblock %}
