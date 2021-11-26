@@ -1,12 +1,12 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h3>Listado de componentes</h3>
-    <h1 class="pull-right">
+    <h3 style="text-align: center; margin-top: 20px;">Listado de componentes</h3>
+    <h1 class="pull-right" style="text-align: center;">
         <a href="{% url 'componentes:componentesCreate' %}" class="btn btn-primary pull-right">Adicionar</a>
     </h1>
 
-    <table class="table">
+    <table class="table table-bordered table-sm" style="width: 90%; margin: 0 auto;">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -28,10 +28,10 @@
               <td>{{componente.aparatos.descripcion}}</td>
               <td>
                 <a class="btn btn-warning btn-xs" href="{% url 'componentes:componentesEdit' componente.id %}">
-                    Update
+                    <i class="fas fa-edit"></i>
                 </a>
                 <a class="btn btn-danger btn-xs" href="{% url 'componentes:componentesEliminar' componente.id %}">
-                    Delete
+                    <i class="fas fa-trash"></i>
                 </a>
               </td>
         {% endfor %}
