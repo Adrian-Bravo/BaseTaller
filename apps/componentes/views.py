@@ -19,3 +19,16 @@ def componentesCreate(request):
     else:
         form = ComponenteForm()
         return render(request, 'componentes/formComponente.html', {'form': form})
+
+def componentesEdit(request, id_componente):
+    componente = Componentes.objects.get(pk=id_componente)
+    if(request.method == 'GET'):
+        form = ComponenteForm(instance=componente)
+    else:
+        form = ComponenteForm(request.POST, instance=componente)
+        if form.is_valid():
+            form.save()
+
+        return redirect('componentes:index')
+
+    return render(request, 'componentes/formComponente.html', {'form': form})

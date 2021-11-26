@@ -25,6 +25,14 @@
               <td>{{componente.cantidad}}</td>
               <td>{{componente.precio}}</td>
               <td>{{componente.aparatos.descripcion}}</td>
+              <td>
+                <a class="btn btn-warning btn-xs" href="{% url 'componentes:componentesEdit' componente.id %}">
+                    Update
+                </a>
+                <a class="btn btn-danger btn-xs" href="#">
+                    Delete
+                </a>
+              </td>
             {% endfor %}
           </tr>
           
